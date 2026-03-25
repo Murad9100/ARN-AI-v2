@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import LandingPage from './pages/LandingPage';
 import LoginPage from './pages/LoginPage';
@@ -11,7 +11,7 @@ import Layout from './components/Layout';
 
 function App() {
   return (
-    <BrowserRouter basename="/ARN-AI-v2">
+    <HashRouter>  {/* ← BU DƏYIŞDIR */}
       <Toaster
         position="top-center"
         toastOptions={{
@@ -39,12 +39,9 @@ function App() {
       />
       
       <Routes>
-        {/* Public Routes */}
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
-
-        {/* Protected Routes */}
         <Route path="/chat" element={
           <ProtectedRoute>
             <Layout>
@@ -67,7 +64,7 @@ function App() {
           </ProtectedRoute>
         } />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>  {/* ← BU DƏYIŞDIR */}
   );
 }
 
