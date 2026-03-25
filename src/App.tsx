@@ -11,7 +11,7 @@ import Layout from './components/Layout';
 
 function App() {
   return (
-    <BrowserRouter basename="/ARN-AI-v2/">
+    <BrowserRouter basename="/ARN-AI-v2">
       <Toaster
         position="top-center"
         toastOptions={{
